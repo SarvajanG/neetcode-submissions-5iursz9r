@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        unordered_map<char, int> sMap;
+        unordered_map<char, int> tMap;
+
+        for (const auto& c : s) {
+            sMap[c] += 1;
+        }
+
+        for (const auto& c : t) {
+            tMap[c] += 1;
+        }
+
+        return sMap == tMap;
+    }
+};
